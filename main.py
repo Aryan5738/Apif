@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # Import CORS
 import requests
 import uuid
 import random
@@ -6,6 +7,7 @@ import string
 import json
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 # ==========================================
 #  FACEBOOK API LOGIC CLASS
@@ -210,4 +212,4 @@ if __name__ == '__main__':
     # Running on 0.0.0.0 to make it accessible from other devices if needed
     print("API Running on http://localhost:5000")
     app.run(host='0.0.0.0', port=5000)
-    
+        
